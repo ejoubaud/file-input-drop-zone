@@ -22,6 +22,23 @@ Features
 * **No stylesheet needed :** Style your zone and preview image however you want
 * **Customizable :** Disable preview or assign whatever preview zone/input field you want through options (see source)
 
+Browser Support
+===============
+
+Works fully with :
+
+* Chrome
+* IE10 ? (not tested yet but should work)
+
+Works partly (no drag n drop but preview update is Ok) with :
+
+* Firefox - will work fully once [`files` property is not readonly anymore](https://bugzilla.mozilla.org/show_bug.cgi?id=757664)
+* Safari
+
+Degrades gracefully (the file input still does its job) with :
+
+* IE9-
+
 Demo
 ====
 

@@ -45,15 +45,17 @@ $.fn.extend
       
       # On drop, syncs the image and the input
       @ondrop = (e) ->
-        if e.dataTransfer
-          e.preventDefault()
-          files = e.dataTransfer.files
-          updatePreview($img, files[0])
+        if e.dataTransfer && (files = e.dataTransfer.files)
           $input.prop('files', files)
-          false
+          if $input.prop('files') == files   # This check is for FF16-, in which files is readonly so the whole thing fails
+            e.preventDefault()
+            updatePreview($img, files[0])
+            false
 
+      # This is needed only in FF, otherwise it just loads the file in the whole windowÒ
       @ondragover = (e) ->
-        e.preventDefault()
+        if e.dataTransfer && e.dataTransfer.files
+          e.preventDefault()
       
       # On input change, syncs the preview
       $input.change ->
