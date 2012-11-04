@@ -51,6 +51,9 @@ $.fn.extend
           updatePreview($img, files[0])
           $input.prop('files', files)
           false
+
+      @ondragover = (e) ->
+        e.preventDefault()
       
       # On input change, syncs the preview
       $input.change ->
