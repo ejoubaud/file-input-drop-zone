@@ -18,7 +18,7 @@ Features
 * **No AJAX :** No need for extra server-side code, whatever handled your regular file input will do the job
 * **Supports old browsers :** Your user can still use the input field in browsers that don't enable drag'n'drop
 * **Very light :** Less than 1kb for the minified js
-* **No scripting required :** Just include jQuery, file-input-drop-zone.js and add a `file-input-drop-zone` to the div containing your input, and you're ready to go
+* **No scripting required :** Just include jQuery, `file-input-drop-zone.js` and add a `file-input-drop-zone` class to the div containing your input, and you're ready to go
 * **No stylesheet needed :** Style your zone and preview image however you want
 * **Customizable :** Disable preview or assign whatever preview zone/input field you want through options (see source)
 
@@ -32,7 +32,7 @@ Works fully with :
 
 Works partly (no drag n drop but preview update is Ok) with :
 
-* Firefox - will work fully once [`files` property is not readonly anymore](https://bugzilla.mozilla.org/show_bug.cgi?id=757664)
+* Firefox - will work fully once `files` property is not readonly anymore, so please [vote up the issue](https://bugzilla.mozilla.org/show_bug.cgi?id=757664)
 * Safari
 
 Degrades gracefully (the file input still does its job) with :
