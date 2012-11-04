@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>File Input Drop Zone Demo</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="file-input-drop-zone.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$('.second-zone').fileInputDropZone({
+				selectImg: function($dropZone) { return $dropZone.find('.preview'); }
+		 	});
+		});
+	</script>
+
+	<style type="text/css">
+		.file-input-drop-zone, .second-zone {
+			float: left;
+			height: 15em;
+			width: 15em;
+			border: 1px dotted grey;
+			overflow: hidden;
+		}
+		.preview {
+			height: 10em;
+			width: 10em;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="file-input-drop-zone">
+		<input type="file">
+		<img />
+	</div>
+
+	<div class="second-zone">
+		<input type="file">
+		<div class="preview">&nbsp;</div>
+	</div>
+
+</body>
+</html>

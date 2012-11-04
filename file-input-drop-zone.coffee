@@ -19,13 +19,16 @@ $.fn.extend
     settings = $.extend settings, options
 
     setPreview = ($img, content) ->
-      if $img && $img[0].tagName == 'IMG'
-        $img.prop('src', content)
-      else
-        $img.css('background-image', content)
+      if $img
+        if $img[0].tagName == 'IMG'
+          $img.prop('src', content)
+        else
+          $img.css
+            'background-image': 'url('+content+')'
+            'background-repeat': 'no-repeat'
     
     updatePreview = ($img, file) ->
-      unless settings.disablePreview
+      if !settings.disablePreview && $img 
         if file.type.match /image[\/\-\w]*/
           reader = new FileReader()
           reader.onload = (ev) ->
@@ -56,4 +59,5 @@ $.fn.extend
         else
           setPreview($img, '')
 
-$('.file-input-drop-zone').fileInputDropZone()
+$ ->
+  $('.file-input-drop-zone').fileInputDropZone()
